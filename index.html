@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mamatha A — Digital Marketing Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --cream: #faf8f4;
+  --ink:   #141414;
+  --teal:  #0e6b72;
+  --teal2: #1a8a95;
+  --teal3: #d4eef0;
+  --gold:  #c8913a;
+  --rust:  #b85c38;
+  --muted: #5a6472;
+  --border:#dde8e9;
+  --card:  #ffffff;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(250,248,244,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: -0.5px;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--teal); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; top: -100px; right: -200px;
+  width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(14,107,114,0.09) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-bg2 {
+  position: absolute; bottom: -150px; left: -100px;
+  width: 500px; height: 500px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,145,58,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-tag {
+  display: inline-block;
+  background: var(--teal3);
+  color: var(--teal);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 100px;
+  margin-bottom: 28px; width: fit-content;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 700; line-height: 0.95;
+  letter-spacing: -2px; color: var(--ink);
+  margin-bottom: 8px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.hero-name span { color: var(--teal); }
+.hero-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 400; font-style: italic;
+  color: var(--muted); margin-bottom: 36px;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+.hero-desc {
+  max-width: 580px; font-size: 16px;
+  color: var(--muted); line-height: 1.78;
+  margin-bottom: 44px;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+.hero-desc strong { color: var(--ink); }
+.hero-btns {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+.btn-primary {
+  background: var(--teal); color: #fff;
+  padding: 14px 30px; border-radius: 4px;
+  font-size: 14px; font-weight: 600;
+  text-decoration: none; letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--teal2); transform: translateY(-2px); }
+.btn-ghost {
+  border: 1.5px solid var(--border); color: var(--muted);
+  padding: 13px 28px; border-radius: 4px;
+  font-size: 14px; font-weight: 500;
+  text-decoration: none; transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex; gap: 48px;
+  margin-top: 72px; padding-top: 40px;
+  border-top: 1px solid var(--border);
+  animation: fadeUp 0.6s 0.5s ease both;
+  flex-wrap: wrap;
+}
+.hstat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px; font-weight: 700;
+  color: var(--teal); line-height: 1;
+}
+.hstat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* ── SECTION ── */
+section { padding: 100px 48px; }
+section:nth-child(even) { background: #fff; }
+.section-tag {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700; line-height: 1.1;
+  letter-spacing: -1px; color: var(--ink);
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 16px; color: var(--muted);
+  max-width: 520px; line-height: 1.7;
+  margin-bottom: 56px;
+}
+
+/* ── SKILLS DARK BAND ── */
+.skills-section { padding: 80px 48px; background: var(--teal); }
+.skills-section .section-tag { color: rgba(255,255,255,0.45); }
+.skills-section .section-title { color: #fff; margin-bottom: 48px; }
+.skills-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 40px;
+}
+.skill-col-title {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.skill-item {
+  font-size: 14px; color: rgba(255,255,255,0.88);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.skill-item::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--gold); border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── CASE STUDIES ── */
+.cases-grid { display: grid; gap: 28px; }
+.case-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.case-card:hover {
+  box-shadow: 0 20px 60px rgba(14,107,114,0.1);
+  transform: translateY(-4px);
+}
+.case-header {
+  padding: 30px 34px 22px;
+  border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 24px;
+}
+.case-brand-wrap { flex: 1; }
+.case-industry {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 8px;
+}
+.case-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--ink); line-height: 1.1; margin-bottom: 4px;
+}
+.case-location { font-size: 13px; color: var(--muted); }
+.case-badge {
+  background: var(--teal3); color: var(--teal);
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 6px 14px; border-radius: 100px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.case-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  border-bottom: 1px solid var(--border);
+}
+.case-metric {
+  padding: 18px 20px;
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+.case-metric:last-child { border-right: none; }
+.cm-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 700;
+  color: var(--teal); line-height: 1;
+}
+.cm-label { font-size: 10px; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+.case-body {
+  padding: 26px 34px 30px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+}
+.case-col-title {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--rust); margin-bottom: 12px;
+}
+.case-list { list-style: none; padding: 0; }
+.case-list li {
+  font-size: 13.5px; color: var(--muted);
+  padding-left: 14px; position: relative;
+  margin-bottom: 7px; line-height: 1.55;
+}
+.case-list li::before {
+  content: '▸'; position: absolute; left: 0;
+  color: var(--teal2); font-size: 10px; top: 4px;
+}
+.case-list li strong { color: var(--ink); }
+.case-quote {
+  grid-column: 1 / -1;
+  background: var(--teal3);
+  border-left: 3px solid var(--teal);
+  padding: 14px 18px; border-radius: 0 6px 6px 0;
+  font-size: 13.5px; color: var(--teal);
+  font-style: italic; line-height: 1.65;
+}
+.case-quote cite {
+  display: block; margin-top: 8px;
+  font-style: normal; font-size: 11px;
+  font-weight: 700; color: var(--muted);
+  letter-spacing: 0.5px; text-transform: uppercase;
+}
+
+/* ── FREELANCE BAND ── */
+.freelance-section { background: #0e1e20; padding: 80px 48px; }
+.freelance-section .section-tag { color: var(--gold); }
+.freelance-section .section-title { color: #fff; margin-bottom: 12px; }
+.freelance-section .section-sub { color: rgba(255,255,255,0.5); margin-bottom: 48px; }
+.freelance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.fl-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 24px 26px;
+  transition: background 0.2s;
+}
+.fl-card:hover { background: rgba(255,255,255,0.09); }
+.fl-flag {
+  font-size: 24px; margin-bottom: 10px;
+}
+.fl-market {
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.fl-title {
+  font-size: 17px; font-weight: 600;
+  color: #fff; margin-bottom: 10px; line-height: 1.3;
+}
+.fl-desc {
+  font-size: 13px; color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+}
+
+/* ── DATA TABLES ── */
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 40px; }
+.data-table th {
+  background: var(--teal); color: #fff;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 12px 16px; text-align: left;
+}
+.data-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+.data-table tr:hover td { background: var(--teal3); }
+.data-table td:first-child { font-weight: 600; color: var(--ink); }
+.data-table td.good { color: #1a7a3e; font-weight: 700; }
+.data-table td.num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; color: var(--teal); font-weight: 700;
+}
+.data-table td.hero-row { background: rgba(14,107,114,0.06); font-weight: 700; }
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute;
+  left: 7px; top: 8px; bottom: 8px;
+  width: 2px; background: var(--border);
+}
+.tl-item { position: relative; margin-bottom: 40px; }
+.tl-dot {
+  position: absolute; left: -32px; top: 6px;
+  width: 16px; height: 16px;
+  background: var(--teal); border-radius: 50%;
+  border: 3px solid var(--cream);
+  box-shadow: 0 0 0 2px var(--teal);
+}
+.tl-dot.gold { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+.tl-date {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 4px;
+}
+.tl-date.gold-date { color: var(--gold); }
+.tl-title { font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+.tl-co { font-size: 13px; color: var(--rust); font-weight: 600; margin-bottom: 10px; }
+.tl-desc { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+/* ── TESTIMONIALS ── */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+.testi-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 8px; padding: 26px 26px 22px;
+  transition: box-shadow 0.2s;
+}
+.testi-card:hover { box-shadow: 0 12px 40px rgba(14,107,114,0.08); }
+.testi-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 60px; line-height: 1;
+  color: var(--teal3); margin-bottom: -10px;
+}
+.testi-text { font-size: 13.5px; color: var(--muted); line-height: 1.72; margin-bottom: 18px; font-style: italic; }
+.testi-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+.testi-co { font-size: 11px; color: var(--teal); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; margin-top: 2px; }
+
+/* ── CERTS ── */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+.cert-card {
+  border: 1px solid var(--border); border-radius: 6px;
+  padding: 18px 20px;
+  display: flex; align-items: center; gap: 14px;
+  background: var(--card); transition: border-color 0.2s;
+}
+.cert-card:hover { border-color: var(--teal); }
+.cert-icon {
+  width: 40px; height: 40px;
+  background: var(--teal3); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.cert-name { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+.cert-issuer { font-size: 11px; color: var(--teal); margin-top: 3px; font-weight: 600; }
+
+/* ── CONTACT ── */
+.contact-section {
+  background: var(--ink);
+  padding: 100px 48px;
+  text-align: center;
+}
+.contact-section .section-tag { color: var(--gold); }
+.contact-section .section-title { color: #fff; margin-bottom: 16px; }
+.contact-section .section-sub { color: rgba(255,255,255,0.5); margin: 0 auto 48px; }
+.contact-links {
+  display: flex;
+  justify-content: center; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.contact-link {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.85);
+  padding: 14px 26px; border-radius: 4px;
+  font-size: 14px; font-weight: 500;
+  text-decoration: none; transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.contact-link:hover { background: var(--teal); border-color: var(--teal); color: #fff; transform: translateY(-2px); }
+.contact-link.primary-cta {
+  background: var(--teal); border-color: var(--teal); color: #fff;
+}
+.contact-link.primary-cta:hover { background: var(--teal2); }
+.open-badge {
+  display: inline-block;
+  background: rgba(14,107,114,0.25);
+  border: 1px solid rgba(14,107,114,0.4);
+  color: #5ecfda; font-size: 12px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 8px 20px; border-radius: 100px;
+  margin-bottom: 28px;
+}
+.open-badge::before { content: '● '; font-size: 8px; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Mamatha A</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#cases">Case Studies</a></li>
+    <li><a href="#results">Campaign Data</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero" id="about">
+  <div class="hero-bg"></div>
+  <div class="hero-bg2"></div>
+  <div class="hero-tag">Open to Work · Remote & Hybrid · India + International</div>
+  <div class="hero-name">Mamatha<span> A</span></div>
+  <div class="hero-role">Head of Growth & Digital Marketing</div>
+  <p class="hero-desc">
+    I build performance marketing engines that generate <strong>high-intent leads, measurable ROAS, and real revenue</strong> — not vanity metrics. 8+ years across India, Dubai, USA, and Australia managing ₹6L+ monthly budgets across Google Ads, Meta Ads, and social media for healthcare, hospitality, and B2C brands.
+  </p>
+  <div class="hero-btns">
+    <a href="#cases" class="btn-primary">View Case Studies</a>
+    <a href="https://wa.me/918867388354?text=Hi%20Mamatha%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect." class="btn-ghost" target="_blank">💬 WhatsApp Me</a>
+    <a href="mailto:mamatha0954@gmail.com?subject=Opportunity%20for%20Mamatha%20A" class="btn-ghost">✉ Email Me</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="hstat-num">3x</div><div class="hstat-label">ROAS Achieved</div></div>
+    <div><div class="hstat-num">₹6L+</div><div class="hstat-label">Monthly Ad Budget</div></div>
+    <div><div class="hstat-num">25%</div><div class="hstat-label">Lead Gen Improvement</div></div>
+    <div><div class="hstat-num">8+</div><div class="hstat-label">Years Experience</div></div>
+    <div><div class="hstat-num">10+</div><div class="hstat-label">Brands Managed</div></div>
+  </div>
+</div>
+
+<!-- ═══ SKILLS ═══ -->
+<div class="skills-section">
+  <div class="section-tag">Expertise</div>
+  <div class="section-title" style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:42px;margin-bottom:48px;">What I Bring to Your Team</div>
+  <div class="skills-cols">
+    <div>
+      <div class="skill-col-title">Paid Advertising</div>
+      <div class="skill-item">Google Ads — Search, Display, Call-Only</div>
+      <div class="skill-item">Meta Ads (Facebook & Instagram)</div>
+      <div class="skill-item">ROAS & CPL Optimisation</div>
+      <div class="skill-item">A/B Testing & Bid Strategy</div>
+      <div class="skill-item">Remarketing & Retargeting</div>
+      <div class="skill-item">Budget Allocation & Scaling</div>
+    </div>
+    <div>
+      <div class="skill-col-title">Analytics & Tracking</div>
+      <div class="skill-item">GA4 / Google Analytics</div>
+      <div class="skill-item">UTM Tracking & Attribution</div>
+      <div class="skill-item">Meta Pixel & Conversions API</div>
+      <div class="skill-item">Looker Studio / Data Studio</div>
+      <div class="skill-item">Google Tag Manager</div>
+      <div class="skill-item">Funnel & Conversion Reporting</div>
+    </div>
+    <div>
+      <div class="skill-col-title">Social Media & Content</div>
+      <div class="skill-item">Instagram, Facebook, LinkedIn, TikTok, X</div>
+      <div class="skill-item">Content Strategy & Copywriting</div>
+      <div class="skill-item">Community Management</div>
+      <div class="skill-item">Influencer Collaboration</div>
+      <div class="skill-item">Brand Management</div>
+      <div class="skill-item">Canva Pro Creative Design</div>
+    </div>
+    <div>
+      <div class="skill-col-title">Strategy & Growth</div>
+      <div class="skill-item">Growth Strategy & Lead Generation</div>
+      <div class="skill-item">CRO & Landing Page Optimisation</div>
+      <div class="skill-item">SEO Strategy</div>
+      <div class="skill-item">Sales Alignment & CRM</div>
+      <div class="skill-item">AI Marketing Tools</div>
+      <div class="skill-item">Team Leadership & Mentoring</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CASE STUDIES ═══ -->
+<section id="cases">
+  <div class="section-tag">Case Studies</div>
+  <div class="section-title">Real Campaigns. Real Results.</div>
+  <div class="section-sub">Every number below is from actual campaign dashboards — no estimates, no projections.</div>
+
+  <div class="cases-grid">
+
+    <!-- CHEFWORKS -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-brand-wrap">
+          <div class="case-industry">Hospitality · Premium Catering · B2C</div>
+          <div class="case-brand">Chefworks</div>
+          <div class="case-location">Bangalore, India · July 2025 – Present</div>
+        </div>
+        <div class="case-badge">Current Role</div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="cm-val">3x</div><div class="cm-label">ROAS Achieved</div></div>
+        <div class="case-metric"><div class="cm-val">6x</div><div class="cm-label">Traffic in 3 Months</div></div>
+        <div class="case-metric"><div class="cm-val">25%</div><div class="cm-label">More Leads</div></div>
+        <div class="case-metric"><div class="cm-val">~20%</div><div class="cm-label">CPC Reduction</div></div>
+        <div class="case-metric"><div class="cm-val">40%</div><div class="cm-label">Engagement Growth</div></div>
+        <div class="case-metric"><div class="cm-val">50%</div><div class="cm-label">Meta Spend Efficiency</div></div>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-col-title">The Challenge</div>
+          <ul class="case-list">
+            <li>Zero digital presence — entire marketing built from scratch</li>
+            <li>Premium catering with high-ticket buyers (weddings, corporate events) who are hard to reach via generic ads</li>
+            <li>Had to compete against established players: caterninja.com, barbeque nation, srilakshmicaterer.in</li>
+            <li>Needed performance (leads + calls) AND brand (event, wedding) marketing simultaneously</li>
+          </ul>
+        </div>
+        <div>
+          <div class="case-col-title">Strategy & Results</div>
+          <ul class="case-list">
+            <li>Built <strong>4 Google Ads campaigns</strong> from scratch: Generic, Wedding, Corporate Catering, Call-Only — separate targeting per segment</li>
+            <li>Clicks grew <strong>1.29K → 8.09K</strong>, impressions <strong>26.2K → 81.3K</strong>, CPC fell <strong>₹41.93 → ₹19.00</strong> (Jan–Mar 2026)</li>
+            <li>Achieved <strong>82.82% top-of-page rate</strong> and 29.86% impression share, outranking all competitors</li>
+            <li>Meta pivot: paused high-CPL ads → consolidated to one luxury events creative → <strong>50% spend cut with no lead drop</strong></li>
+            <li><strong>40% engagement growth + 30% organic follower growth</strong> through strategic Instagram + Facebook content</li>
+            <li>Built UTM tracking, attribution framework, and Looker Studio dashboards for weekly leadership reporting</li>
+          </ul>
+        </div>
+        <div class="case-quote">
+          "Built the brand's entire digital ecosystem from zero and drove the highest revenue in company history — through performance marketing, content, and sales alignment."
+          <cite>Chefworks · Bangalore, India · 2025–Present</cite>
+        </div>
+      </div>
+    </div>
+
+    <!-- ICATT -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-brand-wrap">
+          <div class="case-industry">Healthcare · Medical Air Transport · International</div>
+          <div class="case-brand">ICATT Air Ambulance Services</div>
+          <div class="case-location">Bangalore, India · August 2024 – April 2025</div>
+        </div>
+        <div class="case-badge">International Lead Gen</div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="cm-val">100%</div><div class="cm-label">Impression Share vs. All Competitors</div></div>
+        <div class="case-metric"><div class="cm-val">758.9K</div><div class="cm-label">Accounts Reached (Single Campaign)</div></div>
+        <div class="case-metric"><div class="cm-val">5,572</div><div class="cm-label">Link Clicks at ₹336/day</div></div>
+        <div class="case-metric"><div class="cm-val">₹6L</div><div class="cm-label">Monthly Budget Managed</div></div>
+        <div class="case-metric"><div class="cm-val">8,998</div><div class="cm-label">Instagram Followers</div></div>
+        <div class="case-metric"><div class="cm-val">5+</div><div class="cm-label">Countries: USA, UK, UAE, Africa, EU</div></div>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-col-title">The Challenge</div>
+          <ul class="case-list">
+            <li>Niche, high-stakes service requiring <strong>ultra-high-intent international leads</strong> — wrong leads waste enormous resources</li>
+            <li>Competing against global and Indian air ambulance providers with much larger digital footprints</li>
+            <li>₹6L/month budget had to generate real international inquiries, not just impressions</li>
+            <li>Required trust-building brand authority in a sensitive medical space</li>
+          </ul>
+        </div>
+        <div>
+          <div class="case-col-title">Strategy & Results</div>
+          <ul class="case-list">
+            <li><strong>100% impression share dominance</strong> over all competitors (red.health, medical-air, ems-ambulance, jhankaraviat) in Auction Insights</li>
+            <li>International-targeted Search + Display campaigns generating leads from <strong>USA, UK, UAE, Africa, and Europe</strong></li>
+            <li>Boosted Instagram campaigns: <strong>758.9K reach, 5,572 link clicks</strong> on a single ad at ₹336/day spend</li>
+            <li>Grew Instagram from scratch to <strong>8,998 followers with 608 posts</strong> — patient transfers, tech, team credentials for trust</li>
+            <li>Independently handled full lifecycle: keyword research, A/B testing, bid strategy, budget, and weekly stakeholder reporting</li>
+            <li>Improved SEO and landing page quality scores — boosted organic visibility alongside paid</li>
+          </ul>
+        </div>
+        <div class="case-quote">
+          "Mamtha managed ICATT's social media efficiently, understanding our requirements and consistently delivering quality results."
+          <cite>Sumathi · ICATT Air Ambulance Service, Bangalore</cite>
+        </div>
+      </div>
+    </div>
+
+    <!-- DR GAUTAM ALLAHBADIA -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-brand-wrap">
+          <div class="case-industry">Healthcare · Fertility · Personal Brand · Dubai</div>
+          <div class="case-brand">Dr. Gautam Nand Allahbadia</div>
+          <div class="case-location">Dubai, UAE · via Immerse Digital Solutions</div>
+        </div>
+        <div class="case-badge">IVF Authority Brand</div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="cm-val">3,517</div><div class="cm-label">Followers Grown</div></div>
+        <div class="case-metric"><div class="cm-val">592</div><div class="cm-label">Posts Created</div></div>
+        <div class="case-metric"><div class="cm-val">9,000+</div><div class="cm-label">IVF Babies Across 6 Continents</div></div>
+        <div class="case-metric"><div class="cm-val">UAE</div><div class="cm-label">Top IVF Authority Online Presence</div></div>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-col-title">The Challenge</div>
+          <ul class="case-list">
+            <li>One of the world's most experienced IVF specialists (9,000+ babies, 6 continents since 1990) — needed a digital presence that matched his medical authority</li>
+            <li>Audience: couples undergoing fertility treatments — deeply emotional, requiring empathetic and medically accurate content</li>
+            <li>Needed consistent educational content in English for a UAE + global audience without compromising clinical trust</li>
+            <li>Had to translate complex IVF/reproductive medicine topics into accessible, shareable social content</li>
+          </ul>
+        </div>
+        <div>
+          <div class="case-col-title">Strategy & Results</div>
+          <ul class="case-list">
+            <li>Built an educational content strategy covering <strong>IVF, PCOS, ovulation induction, embryo transfer, egg freezing, AMH testing</strong> — positioning Dr. Gautam as a UAE-based global fertility authority</li>
+            <li>Created <strong>592 posts across the account</strong> combining patient testimonials ("What Dr. Gautam's patients are saying"), clinical education, and motivational content ("Be a warrior, not a worrier")</li>
+            <li>Grew profile to <strong>3,517 followers</strong> through organic content-first strategy — no paid follower acquisition</li>
+            <li>Designed visual series: PCOS content, IVF journey posts, women's health awareness — consistently high engagement</li>
+            <li>Managed Women's Day, Valentine's Day, and health awareness campaigns aligned to fertility topics</li>
+            <li>Coordinated with clinic for webinar promotions ("Webinar for Doctors") and cross-platform visibility</li>
+          </ul>
+        </div>
+        <div class="case-quote">
+          "Working with Mamtha has been a great experience. She manages accounts professionally and always meets client needs. Highly recommended!"
+          <cite>Dr. Gautam Nand Allahbadia · Allahbadia IVF, Dubai</cite>
+        </div>
+      </div>
+    </div>
+
+    <!-- DR MONIKA CHAWLA -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-brand-wrap">
+          <div class="case-industry">Healthcare · Fertility · Personal Brand · Abu Dhabi</div>
+          <div class="case-brand">Dr. Monika Chawla</div>
+          <div class="case-location">Abu Dhabi, UAE · via Immerse Digital Solutions</div>
+        </div>
+        <div class="case-badge">55.7K Followers</div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="cm-val">55.7K</div><div class="cm-label">Instagram Followers</div></div>
+        <div class="case-metric"><div class="cm-val">+97.6%</div><div class="cm-label">Reach in 2 Weeks</div></div>
+        <div class="case-metric"><div class="cm-val">+225%</div><div class="cm-label">Engagement in 2 Weeks</div></div>
+        <div class="case-metric"><div class="cm-val">1,739</div><div class="cm-label">Posts Published</div></div>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-col-title">The Challenge</div>
+          <ul class="case-list">
+            <li>Award-winning fertility doctor (MrsIndiaEarth2021 Winner) needing a personal brand matching her medical stature</li>
+            <li>Deeply sensitive audience: couples dealing with infertility — required empathetic, accurate, emotionally resonant content</li>
+            <li>Had to work in both English and Arabic for UAE audience while meeting medical communication standards</li>
+          </ul>
+        </div>
+        <div>
+          <div class="case-col-title">Strategy & Results</div>
+          <ul class="case-list">
+            <li>Built bilingual educational content: IVF, PCOS, AMH tests, preimplantation genetic screening, embryo transfer, vitamin D + fertility</li>
+            <li><strong>+97.6% accounts reached and +225% accounts engaged</strong> in a 2-week sprint (Feb 6–19)</li>
+            <li>Grew profile to <strong>55.7K followers with 1,739 posts</strong> — one of UAE's highest-followed fertility doctors on Instagram</li>
+            <li>Patient gratitude posts became highest-engagement organic content: "3 out of 3 have brought us hope and joy"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- AL AIN FARMS -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-brand-wrap">
+          <div class="case-industry">FMCG · Dairy · UAE Market</div>
+          <div class="case-brand">Al Ain Farms</div>
+          <div class="case-location">Dubai, UAE · via Immerse Digital Solutions</div>
+        </div>
+        <div class="case-badge">+541% Reach</div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="cm-val">477K</div><div class="cm-label">Accounts Reached</div></div>
+        <div class="case-metric"><div class="cm-val">+541%</div><div class="cm-label">Reach Growth in 1 Month</div></div>
+        <div class="case-metric"><div class="cm-val">+39.2%</div><div class="cm-label">Accounts Engaged</div></div>
+        <div class="case-metric"><div class="cm-val">24.1K</div><div class="cm-label">Total Followers</div></div>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-col-title">The Challenge</div>
+          <ul class="case-list">
+            <li>Major UAE dairy brand competing in a crowded FMCG market with regional competitors</li>
+            <li>Needed to increase awareness across multiple product lines (fresh milk, lactose-free, cheese, juices, poultry) in one cohesive brand voice</li>
+            <li>Bilingual (English + Arabic) content required for full UAE market coverage</li>
+          </ul>
+        </div>
+        <div>
+          <div class="case-col-title">Strategy & Results</div>
+          <ul class="case-list">
+            <li>Built bilingual content strategy: product education, seasonal campaigns (Ramadan, National Day, Hijri New Year), and lifestyle visuals</li>
+            <li><strong>477K accounts reached (+541%)</strong> and <strong>+39.2% engagement growth</strong> in a single month (Aug–Sep)</li>
+            <li>Managed 1,454 posts worth of brand presence with consistent visual identity across all SKUs</li>
+            <li>Giveaway and recipe-driven content drove highest-reach posts organically</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SONASHI -->
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-brand-wrap">
+          <div class="case-industry">Consumer Electronics · UAE Market</div>
+          <div class="case-brand">Sonashi Electronics</div>
+          <div class="case-location">Dubai, UAE · via Immerse Digital Solutions</div>
+        </div>
+        <div class="case-badge">+1,304% Reach</div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="cm-val">+1,304%</div><div class="cm-label">Accounts Reached (Dec)</div></div>
+        <div class="case-metric"><div class="cm-val">+621%</div><div class="cm-label">Accounts Engaged (Dec)</div></div>
+        <div class="case-metric"><div class="cm-val">7,303</div><div class="cm-label">Total Followers</div></div>
+        <div class="case-metric"><div class="cm-val">578</div><div class="cm-label">Posts Published</div></div>
+      </div>
+      <div class="case-body">
+        <div>
+          <div class="case-col-title">The Challenge</div>
+          <ul class="case-list">
+            <li>Home appliance brand competing in UAE's saturated electronics market against global names</li>
+            <li>Multiple SKUs (vacuum cleaners, kettles, air fryers, fans, juicers) requiring lifestyle-led product positioning</li>
+            <li>Seasonal spikes required timely, high-quality campaign execution under tight turnaround</li>
+          </ul>
+        </div>
+        <div>
+          <div class="case-col-title">Strategy & Results</div>
+          <ul class="case-list">
+            <li>"Lifestyle + product benefit" creative approach: "Makes cleaning an easy task", "Your perfect kitchen assistant"</li>
+            <li>December campaign: <strong>+1,304% reach and +621% engagement</strong> through content + paid boost combination</li>
+            <li>Seasonal calendar executed across Father's Day, Mother's Day, Eid, and New Year campaigns</li>
+            <li>Consistent modern, aspirational UAE lifestyle brand voice across 578 posts</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /cases-grid -->
+</section>
+
+<!-- ═══ FREELANCE ═══ -->
+<div class="freelance-section" id="freelance">
+  <div class="section-tag">Freelance Projects</div>
+  <div class="section-title" style="color:#fff;font-family:'Cormorant Garamond',serif;font-size:42px;margin-bottom:12px;">Global Freelance Work</div>
+  <div class="section-sub">Apr 2025 – Jul 2025 · Independent digital marketing projects across three international markets while transitioning between full-time roles.</div>
+  <div class="freelance-grid">
+    <div class="fl-card">
+      <div class="fl-flag">🇺🇸</div>
+      <div class="fl-market">US Market</div>
+      <div class="fl-title">Performance Marketing & Paid Ads</div>
+      <div class="fl-desc">Managed Google Ads and Meta Ads campaigns for US-based clients. Focused on lead generation, audience targeting, and campaign optimisation for North American markets with different consumer behaviour and CPC benchmarks.</div>
+    </div>
+    <div class="fl-card">
+      <div class="fl-flag">🇦🇺</div>
+      <div class="fl-market">Australian Market</div>
+      <div class="fl-title">Digital Marketing Strategy</div>
+      <div class="fl-desc">Executed digital marketing projects for Australian clients — content strategy, social media management, and paid campaign setup. Navigated AUD budgets, local platform nuances, and AEST timezone coordination remotely from India.</div>
+    </div>
+    <div class="fl-card">
+      <div class="fl-flag">🇦🇪</div>
+      <div class="fl-market">Dubai / UAE Market</div>
+      <div class="fl-title">Social Media & Brand Growth</div>
+      <div class="fl-desc">Continued serving UAE-based clients with social media management and brand growth support — leveraging 4+ years of existing knowledge of GCC market behaviour, bilingual content strategy, and regional platform trends.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CAMPAIGN DATA ═══ -->
+<section id="results" style="background:#fff;">
+  <div class="section-tag">Campaign Data</div>
+  <div class="section-title">By the Numbers</div>
+  <div class="section-sub">Raw Google Ads data from Chefworks account — January to March 2026 showing campaign scaling progression.</div>
+
+  <p style="font-size:13px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">Google Ads Month-on-Month Growth</p>
+  <table class="data-table">
+    <thead>
+      <tr><th>Month</th><th>Clicks</th><th>Impressions</th><th>Avg. CPC</th><th>Total Spend</th><th>Change</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>January 2026</td><td class="num">1,290</td><td>26,200</td><td>₹41.93</td><td>₹54,300</td><td>—</td></tr>
+      <tr><td>February 2026</td><td class="num">4,080</td><td>42,500</td><td>₹29.24</td><td>₹1,19,000</td><td class="good">+216% clicks ↑ · CPC –30% ↓</td></tr>
+      <tr><td>March 2026</td><td class="num">8,090</td><td>81,300</td><td>₹19.00</td><td>₹1,54,000</td><td class="good">+98% clicks ↑ · CPC –35% ↓</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:13px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin:48px 0 16px;">Active Campaign Breakdown — Mar 1 to Apr 13, 2026</p>
+  <table class="data-table">
+    <thead>
+      <tr><th>Campaign</th><th>Clicks</th><th>Impressions</th><th>Avg. CPC</th><th>Spend</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Generic Campaign #3</td><td class="num">4,710</td><td>46,100</td><td>₹17.24</td><td>₹81,300</td></tr>
+      <tr><td>Wedding Campaign #3</td><td class="num">2,670</td><td>26,900</td><td>₹24.52</td><td>₹65,400</td></tr>
+      <tr><td>Corporate Catering #3</td><td class="num">1,490</td><td>14,000</td><td>₹24.97</td><td>₹37,200</td></tr>
+      <tr><td>GB: Call-Only</td><td class="num">1,360</td><td>14,400</td><td>₹17.25</td><td>₹23,400</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:13px;font-weight:700;color:var(--teal);letter-spacing:1px;text-transform:uppercase;margin:48px 0 16px;">Auction Insights — Chefworks vs. Competitors (Apr 2026)</p>
+  <table class="data-table">
+    <thead>
+      <tr><th>Advertiser</th><th>Impression Share</th><th>Overlap Rate</th><th>Top of Page Rate</th><th>Outranking Share</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color:var(--teal);font-weight:700;">✦ Chefworks (You)</td>
+        <td class="num">29.86%</td><td>—</td><td class="good">82.82%</td><td>—</td>
+      </tr>
+      <tr><td>caterninja.com</td><td>21.16%</td><td>44.03%</td><td>89.70%</td><td>22.00%</td></tr>
+      <tr><td>sriannapoorneshwaricatering</td><td>10.15%</td><td>23.23%</td><td>88.29%</td><td>27.53%</td></tr>
+      <tr><td>hilbangalore.com</td><td>&lt;10%</td><td>17.77%</td><td>88.91%</td><td>26.93%</td></tr>
+      <tr><td>plattr.club / barbeque nation</td><td>&lt;10%</td><td>15.49%</td><td>76.92%</td><td>28.23%</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══ EXPERIENCE TIMELINE ═══ -->
+<section id="experience">
+  <div class="section-tag">Experience</div>
+  <div class="section-title">8+ Years of Impact</div>
+  <div class="section-sub">From social media specialist in Dubai to Head of Growth in Bangalore — with a global freelance chapter in between.</div>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">July 2025 – Present</div>
+      <div class="tl-title">Head – Growth & Marketing</div>
+      <div class="tl-co">Chefworks · Bangalore, India</div>
+      <div class="tl-desc">Leading end-to-end performance marketing for a premium catering brand. Built digital presence from scratch. Achieved 3x ROAS, 6x traffic growth in 3 months, 25% more leads, 20% lower CPC. Manages Google Ads, Meta Ads, social media, content strategy, UTM tracking, and cross-functional teams.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot gold"></div>
+      <div class="tl-date gold-date">April 2025 – July 2025 · Freelance</div>
+      <div class="tl-title">Independent Digital Marketing Consultant</div>
+      <div class="tl-co">US · Australian · Dubai Markets</div>
+      <div class="tl-desc">Managed freelance digital marketing projects across three international markets — USA, Australia, and UAE. Handled performance marketing, social media management, and brand growth projects remotely. Gained direct exposure to North American and APAC market behaviours, ad platforms, and audience targeting nuances.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">August 2024 – April 2025</div>
+      <div class="tl-title">Head of Digital Marketing</div>
+      <div class="tl-co">ICATT Air Ambulance Services · Bangalore, India</div>
+      <div class="tl-desc">Managed ₹6L/month budgets on Google Ads + Meta Ads. Generated international leads from USA, UK, UAE, Africa, Europe. Achieved 100% impression share over all competitors. Grew Instagram to 8,998 followers. Ran single campaign reaching 758.9K accounts with 5,572 clicks at ₹336/day.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">January 2020 – August 2023</div>
+      <div class="tl-title">Social Media Manager</div>
+      <div class="tl-co">Immerse Digital Solutions · Dubai, UAE</div>
+      <div class="tl-desc">Led social media for 10+ brands across healthcare, FMCG, retail, and hospitality in UAE and India. Key results: Al Ain Farms +541% reach; Dr. Monika Chawla 55.7K followers, +225% engagement; Dr. Gautam Allahbadia 3,517 followers + 592 posts of IVF educational content; Sonashi Electronics +1,304% reach, +621% engagement; Imperial Healthcare UAE.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">August 2017 – January 2020</div>
+      <div class="tl-title">Social Media Specialist</div>
+      <div class="tl-co">Immerse Digital Solutions · Dubai, UAE</div>
+      <div class="tl-desc">Developed and executed social media strategies for retail and e-commerce clients. Delivered 10% increase in online sales and 30% follower growth. Managed communities, KPI tracking, and performance reporting across platforms.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials" style="background:#fff;">
+  <div class="section-tag">Testimonials</div>
+  <div class="section-title">What Clients Say</div>
+  <div class="section-sub">Real feedback from clients and managers across India and Dubai.</div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-quote-mark">"</div>
+      <p class="testi-text">I highly recommend Mamatha for her exceptional contributions during her tenure with Immerse. As a pivotal member of our team, she demonstrated remarkable skills in client management, content planning, and collaboration with designers. Her dedication played a significant role in propelling the growth of our digital marketing startup.</p>
+      <div class="testi-name">Ashwin Mathew</div>
+      <div class="testi-co">Immerse Digital Solutions, Dubai</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote-mark">"</div>
+      <p class="testi-text">Mamtha managed ICATT's social media efficiently, understanding our requirements and consistently delivering quality results. Her deep understanding of the healthcare space made her an invaluable asset to the team.</p>
+      <div class="testi-name">Sumathi</div>
+      <div class="testi-co">ICATT Air Ambulance Service, Bangalore</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote-mark">"</div>
+      <p class="testi-text">Working with Mamtha has been a great experience. She manages accounts professionally and always meets client needs. Highly recommended!</p>
+      <div class="testi-name">Dr. Gautam Nand Allahbadia</div>
+      <div class="testi-co">Allahbadia IVF, Dubai</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote-mark">"</div>
+      <p class="testi-text">Mamtha managed Aura Interio's social media and played a key role in building our website, understanding our needs and delivering excellent results.</p>
+      <div class="testi-name">Ravi Kumar</div>
+      <div class="testi-co">Aura Interio, Bangalore</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-quote-mark">"</div>
+      <p class="testi-text">Her expertise in digital marketing and social media management helped me find the right campaigns, leading to great lead generation. My social media presence has improved significantly. Highly recommend her!</p>
+      <div class="testi-name">Likitha S Gowda</div>
+      <div class="testi-co">Zinnia by Liki, Bangalore</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section>
+  <div class="section-tag">Credentials</div>
+  <div class="section-title">Certifications</div>
+  <div class="section-sub" style="margin-bottom:40px;">Verified certifications across Google, Meta, and digital marketing platforms.</div>
+  <div class="certs-grid">
+    <div class="cert-card"><div class="cert-icon">🎯</div><div><div class="cert-name">Google Ads Search Certification</div><div class="cert-issuer">Google Skillshop</div></div></div>
+    <div class="cert-card"><div class="cert-icon">📊</div><div><div class="cert-name">Google Ads Display Certification</div><div class="cert-issuer">Google Skillshop</div></div></div>
+    <div class="cert-card"><div class="cert-icon">📈</div><div><div class="cert-name">Google Analytics Certification</div><div class="cert-issuer">Google Analytics Academy</div></div></div>
+    <div class="cert-card"><div class="cert-icon">📱</div><div><div class="cert-name">Meta Certified Digital Marketing Associate</div><div class="cert-issuer">Meta Blueprint</div></div></div>
+    <div class="cert-card"><div class="cert-icon">🎓</div><div><div class="cert-name">Diploma in Digital Marketing</div><div class="cert-issuer">Digital Academy 360</div></div></div>
+    <div class="cert-card"><div class="cert-icon">🤖</div><div><div class="cert-name">AI in Digital Marketing</div><div class="cert-issuer">Online Learning</div></div></div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<div class="contact-section" id="contact">
+  <div class="open-badge">Open to Work</div>
+  <div class="section-tag">Let's Work Together</div>
+  <div class="section-title">Ready to Drive Real Results?</div>
+  <p class="section-sub">Open to Performance Marketing, Paid Media, Social Media Strategy, and Growth Marketing roles — Remote & Hybrid (India + International).</p>
+  <div class="contact-links">
+    <a href="mailto:mamatha0954@gmail.com?subject=Opportunity%20for%20Mamatha%20A&body=Hi%20Mamatha%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." class="contact-link primary-cta">✉ Email Me</a>
+    <a href="https://wa.me/918867388354?text=Hi%20Mamatha%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect%20about%20an%20opportunity." class="contact-link" target="_blank">💬 WhatsApp</a>
+    <a href="https://www.linkedin.com/in/mamathaamaresh/" class="contact-link" target="_blank">🔗 LinkedIn</a>
+    <a href="tel:+918867388354" class="contact-link">📞 +91 88673 88354</a>
+  </div>
+  <p style="color:rgba(255,255,255,0.25);font-size:12px;margin-top:48px;">© 2025 Mamatha A · Digital Marketing Portfolio</p>
+</div>
+
+</body>
+</html>
